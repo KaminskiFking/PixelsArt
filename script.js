@@ -41,6 +41,7 @@ for(let i = 0; i < 25; i++){
 
     let childPixelBoard = document.createElement('div');
     childPixelBoard.className = "pixel"
+    childPixelBoard.addEventListener('click', paintColors);
     acessPixelBoard.appendChild(childPixelBoard);
 }
 
@@ -102,9 +103,23 @@ function firstColorEvent(){
 
 firstColor.addEventListener('click', firstColorEvent)
 
-console.log(colors)
+
+function paintColors(evt){
+
+    evt.target.style.backgroundColor = colors[0].style.backgroundColor;
+
+    if(secondColor.className === "color selected"){
+        evt.target.style.backgroundColor = colors[1].style.backgroundColor;
+    } else if (threeColor.className === 'color selected'){
+        evt.target.style.backgroundColor = colors[2].style.backgroundColor;
+    } else if (fourColor.className === 'color selected'){
+        evt.target.style.backgroundColor = colors[3].style.backgroundColor;
+    } else if (firstColor.className === "color selected"){
+        evt.target.style.backgroundColor = colors[0].style.backgroundColor;
+    }
 
 
+}
 
 
 
